@@ -1,0 +1,29 @@
+
+https://dzone.com/articles/monitoring-docker-swarm
+
+
+git clone https://github.com/imixs/imixs-cloud
+
+$ docker network create --driver=overlay imixs-proxy-net
+
+edit docker-compose.yml and change volume path 
+
+$docker-compose up -d
+
+
+That’s it. You can access Prometheus via:
+
+http://your-host:9090
+
+f all endpoints are up, you can switch to the Grafana UI:
+
+http://your-host:3000
+
+To access the metrics collected by Prometheus, you just need to create a Prometheus Datasource. Here, you can enter the internal Prometheus URL
+
+ http://prometheus:9090
+ 
+
+# Access Grafana 
+http://192.168.64.19:3000 
+Provide admin as username and password as admin ,it will prompt to change the password.
