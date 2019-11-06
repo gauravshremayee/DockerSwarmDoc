@@ -1,0 +1,17 @@
+$ docker service create --name my-web1 --publish 8081:80 --replicas 2 nginx
+
+$docker service scale my-web1=3
+
+$docker service ps my-web1
+
+$docker service scale my-web1=3
+
+$docker service ps my-web1
+
+$ docker service ps my-web1
+
+
+
+$docker service rm my-web1
+                     
+$docker service ps my-web1
