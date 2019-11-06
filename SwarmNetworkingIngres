@@ -1,0 +1,21 @@
+docker network create --opt encrypted --subnet 100.0.0.0/24 -d overlay net1
+   docker service create --name redis --network net1 redis
+    docker service create --name node --network net1 nvbeta/node
+   docker service create --name nginx --network net1 -p 1080:80 nvbeta/swarm_nginx
+   docker network ls
+   docker ps
+   cd /var/run
+  sudo ln -s /var/run/docker/netns netns
+      sudo ip netns
+
+net1:
+
+This is the overlay network we create for east-west communication between containers.
+
+docker_gwbridge:
+
+This is the network created by Docker. It allows the containers to connect to the host that it is running on.
+
+ingress:
+
+This is the network created by Docker. Docker swarm uses this network to expose services to the external network and provide the routing mesh.
